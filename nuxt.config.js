@@ -1,12 +1,17 @@
+const publicPath = 'https://longzip.github.io/nuxt-gvc.io/'
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
+
+  router: {
+    base: '/nuxt-gvc.io/',
+  },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'nuxt-gvc',
     htmlAttrs: {
-      lang: 'en',
+      lang: 'vi',
     },
     meta: [
       { charset: 'utf-8' },
@@ -42,5 +47,13 @@ export default {
   axios: {},
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    publicPath,
+  },
+  generate: {
+    dir: 'docs',
+  },
+  server: {
+    host: '0', // default: localhost
+  },
 }
